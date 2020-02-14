@@ -4,12 +4,12 @@ const axios = require('axios');
 const config = require('config');
 const cors = require('cors');
 const serverless = require("serverless-http");
-
+const router = express.router()
 const app = express();
 
 // Enable CORS
 app.use(cors());
-
+app.use('./netlify/functions/api', router)
 const key = config.get('league');
 
 const port = process.env.PORT || 5000;
