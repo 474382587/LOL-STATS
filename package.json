@@ -4,7 +4,9 @@
   "description": "Node server for league stat ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=development ./node_modules/.bin/netlify-lambda serve src",
+    "build": "NODE_ENV=production ./node_modules/.bin/netlify-lambda build src"
   },
   "author": "Joseph Jin",
   "license": "ISC",
@@ -12,6 +14,7 @@
     "axios": "^0.19.2",
     "config": "^3.2.5",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "serverless-http": "^2.3.1"
   }
 }
