@@ -15,6 +15,7 @@
     "config": "^3.2.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "netlify-lambda": "^1.6.3",
     "serverless-http": "^2.3.1"
   }
 }

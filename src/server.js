@@ -3,18 +3,18 @@ const express = require('express');
 const axios = require('axios');
 const config = require('config');
 const cors = require('cors');
-const serverless = require("serverless-http");
-const router = express.router()
+const serverless = require('serverless-http');
+const router = express.Router();
 const app = express();
 
 // Enable CORS
 app.use(cors());
-app.use('./netlify/functions/api', router)
+
 const key = config.get('league');
 
 const port = process.env.PORT || 5000;
 
-app.get('/:summoner', async (request, response) => {
+router.get('/:summoner', async (request, response) => {
     console.log(request.params);
     const { summoner } = request.params;
     // const summoner = 'jerkjoe';
@@ -94,6 +94,6 @@ app.get('/:summoner', async (request, response) => {
 //     console.log(`Server starts at port ${port}`);
 // });
 
-
+app.use('/.netlify/functions/server', router); // path must route to lambda
 module.exports = app;
 module.exports.handler = serverless(app);
