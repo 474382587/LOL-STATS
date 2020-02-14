@@ -10,7 +10,7 @@ const app = express();
 // Enable CORS
 app.use(cors());
 
-const key = config.get('league');
+const key = 'RGAPI-84d61cc6-8ab5-4df1-b3e9-7325b62a376f'
 
 const port = process.env.PORT || 5000;
 
