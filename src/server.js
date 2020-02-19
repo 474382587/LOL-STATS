@@ -10,7 +10,7 @@ const app = express();
 // Enable CORS
 app.use(cors());
 
-const key = 'RGAPI-84d61cc6-8ab5-4df1-b3e9-7325b62a376f'
+const key = 'RGAPI-95bef4ac-5025-4a27-a891-d5da966f9cad'
 
 const port = process.env.PORT || 5000;
 
